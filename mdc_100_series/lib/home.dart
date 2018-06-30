@@ -24,13 +24,30 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       // TODO: Add app bar (102)
       appBar: AppBar(
-        title: Text("Shrine"),
+        
         leading: IconButton(
           icon: Icon(Icons.menu),
           onPressed: (){
             print("Menu Button");
-          },
+          },  
         ),
+
+        title: Text("Shrine"),
+
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: (){
+              print("Search Tapped");
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.tune),
+            onPressed: (){
+              print("Filter Tapped");
+            },
+          ) 
+        ],
 
       ),
 

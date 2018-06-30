@@ -21,6 +21,9 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   // TODO: Add text editing controllers (101)
+  final _userNameController = TextEditingController();
+  final _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -43,6 +46,7 @@ class _LoginPageState extends State<LoginPage> {
 
             // TODO: Add TextField widgets (101)
             TextField(
+              controller: _userNameController,
               decoration: InputDecoration(
                 filled: true,
                 labelText: "Username"
@@ -53,6 +57,7 @@ class _LoginPageState extends State<LoginPage> {
 
             // Password
             TextField(
+              controller: _passwordController,
               decoration: InputDecoration(
                 filled: true,
                 labelText: "Password"
@@ -69,6 +74,8 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text('CANCEL'),
                   onPressed: () {
                     // TODO - Clear the text field
+                    _userNameController.clear();
+                    _passwordController.clear();
 
                   },
                 ),
@@ -78,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                 RaisedButton(
                   child: Text('NEXT'),
                   onPressed: () {
-
+                    Navigator.pop(context);
                   },
                 ),
 

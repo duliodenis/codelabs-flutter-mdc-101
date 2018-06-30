@@ -58,9 +58,35 @@ class _LoginPageState extends State<LoginPage> {
                 labelText: "Password"
               ),
               obscureText: true,
-            )
+            ),
 
             // TODO: Add button bar (101)
+            ButtonBar(
+              // Add a beveled rectangular border
+              children: <Widget>[
+                // TODO - Add a button
+                FlatButton(
+                  child: Text('CANCEL'),
+                  onPressed: () {
+                    // TODO - Clear the text field
+
+                  },
+                ),
+
+                // Add an elevation to NEXT
+                // Add a beveled Rectangle to NEXT
+                RaisedButton(
+                  child: Text('NEXT'),
+                  onPressed: () {
+
+                  },
+                ),
+
+
+              ],
+            ),
+
+
           ],
         ),
       ),

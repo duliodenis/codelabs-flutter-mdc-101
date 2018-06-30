@@ -24,31 +24,27 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       // TODO: Add app bar (102)
       appBar: AppBar(
-        
         leading: IconButton(
           icon: Icon(Icons.menu),
-          onPressed: (){
+          onPressed: () {
             print("Menu Button");
-          },  
+          },
         ),
-
         title: Text("Shrine"),
-
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
-            onPressed: (){
+            onPressed: () {
               print("Search Tapped");
             },
           ),
           IconButton(
             icon: Icon(Icons.tune),
-            onPressed: (){
+            onPressed: () {
               print("Filter Tapped");
             },
-          ) 
+          )
         ],
-
       ),
 
       // TODO: Add a grid view (102)
@@ -57,10 +53,30 @@ class HomePage extends StatelessWidget {
         padding: EdgeInsets.all(16.0),
         childAspectRatio: 8.0 / 9.0,
         children: <Widget>[
-          Card()
+          Card(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                AspectRatio(
+                  aspectRatio: 18.0 / 11.0,
+                  child: Image.asset('assets/diamond.png'),
+                ),
+                new Padding(
+                  padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text('Title'),
+                      SizedBox(height: 8.0),
+                      Text('Secondary Text'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          )
         ],
       ),
-
     );
   }
 }
